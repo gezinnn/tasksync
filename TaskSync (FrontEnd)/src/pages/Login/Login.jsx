@@ -68,7 +68,7 @@ export default function Login() {
       <div className={styles.left}>
         <p className={styles.subTitle}>Log - In</p>
         <div className={styles.titulo}>
-          <p className={styles.title}>Bem Vindo de Volta</p>
+          <p className={styles.title}>Seja Bem Vindo de Volta!</p>
         </div>
       </div>
       <div className={styles.center}>

@@ -47,7 +47,6 @@ export default function ModalEditarUsuario({
       FecharModal();
       refresh();
     } catch (error) {
-      ToastService.Error("Erro ao Editar Usuario");
     }
   }
 

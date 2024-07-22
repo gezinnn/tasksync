@@ -90,22 +90,6 @@ export default function ModalEditarTarefa({
         } catch (error) {
         }
     }
-
-    async function BuscarTarefaPorID() {
-        try {
-          const response = await ApiService.get(
-            "/Tarefa/ListarTarefaPorId?id=" + idTarefaSelecionada
-          );
-       
-          setNome(response.data.nome);
-          setProjeto(response.data.projeto);
-          setStatus(response.data.status);
-          setDescricao(response.data.descricao);
-          setDataEntrega(response.data.dataEntrega);
-        
-        } catch (error) {
-        }
-      }
     
     async function BuscarUsuarios() {
         try {

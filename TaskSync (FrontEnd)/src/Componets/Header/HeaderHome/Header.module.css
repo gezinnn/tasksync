@@ -16,3 +16,11 @@
   margin: 15px;
   font-size: medium;
 }
+
+.nomeUsu{
+  width: 300px;
+  padding: 0.5%;
+  color: #000;
+  float: left;
+  font-size: x-large;
+}

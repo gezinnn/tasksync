@@ -137,6 +137,7 @@ export default function ModalCadastroEvento({
           </select>
           <Multiselect
             className={styles.multiSelect}
+            placeholder="Selecione Um Usuário"
             options={usuarios}
             selectedValues={usuarioAtribuido}
             onSelect={quandoSelecionadoUsuario}

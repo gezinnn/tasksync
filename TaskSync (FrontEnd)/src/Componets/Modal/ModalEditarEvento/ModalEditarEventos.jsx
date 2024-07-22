@@ -187,6 +187,7 @@ export default function ModalEditarEvento({
           className={styles.multiSelect}
           options={usuarios}
           selectedValues={usuarioAtribuido}
+          placeholder="Selecione Um Usuário"
           onSelect={quandoSelecionadoUsuario}
           onRemove={quandoRemoverUsuario}
           displayValue="nome"

@@ -25,7 +25,7 @@ export default function CardTarefa({ tarefa }) {
               <p className={styles.descricao}>{tarefa.descricao}</p>
             </div>
             <div className={styles.footer}>
-              <p className={styles.projeto}></p>
+              <p className={styles.projeto}>{tarefa.projeto}</p>
             </div>
           </div>
         </div>

@@ -61,7 +61,6 @@ export default function ModalEditarProjeto({
       setDescricao(response.data.descricao);
       setUsuarioAtribuido(response.data.usuariosAtribuidos);
     } catch (error) {
-      ToastService.Error("Erro ao Listar Projeto");
     }
   }
 
@@ -81,7 +80,7 @@ export default function ModalEditarProjeto({
   async function DeletarProjeto() {
     try {
       await ApiService.delete(
-        "/Projeto/ExcluirProjeto?idE=" + idProjetoSelecionado
+        "/Projeto/ExcluirProjeto?idP=" + idProjetoSelecionado
       );
       ToastService.Success("Projeto Deletada com Sucesso");
       FecharModal();

@@ -5,9 +5,10 @@ import ModalCadastroProjeto from "../../Modal/ModalCadastroProjeto/ModalCadastro
 import ModalCadastroTarefa from "../../Modal/ModalCadastroTarefa/ModalCadastroTarefa";
 import ApiService from "../../../services/ApiService";
 
-export default function Header({refresh}) {
+export default function Header({ refresh }) {
   const [modalProjetoAberto, setModalProjetoAberto] = useState(false);
   const [modalTarefaAberto, setModalTarefaAberto] = useState(false);
+  const [usuario, setUsuario] = useState({});
   const [tarefas, setTarefas] = useState([]);
 
   async function buscarTarefas() {
@@ -18,6 +19,17 @@ export default function Header({refresh}) {
       console.error("Erro ao listar as tarefas:", error);
     }
   }
+
+  async function BuscarDadosUsuario() {
+    const response = await ApiService.get("/Usuario/getuserdata");
+    if (response.status == 200) {
+      setUsuario(response.data);
+    }
+  }
+
+  useEffect(() => {
+    BuscarDadosUsuario();
+  }, [])
 
   return (
     <>
@@ -35,6 +47,14 @@ export default function Header({refresh}) {
         />
       </>
       <div className={styles.container}>
+
+        <div className={styles.nomeUsu}>
+          <p className={styles.nomeUsu}>
+            Olá, {usuario.nome}
+          </p>
+        </div>
+
+
         <button
           className={styles.btn}
           onClick={() => setModalProjetoAberto(true)}

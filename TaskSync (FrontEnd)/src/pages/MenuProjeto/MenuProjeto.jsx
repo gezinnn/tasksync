@@ -95,10 +95,11 @@ export default function MenuProjeto() {
   async function BuscarTarefas() {
     try {
       if (!projetoSelecionado) return;
-      if (!location?.state?.id) return;
+
+      const idprojeto = projetoSelecionado.value ? projetoSelecionado.value : projetoSelecionado;
 
       const response = await ApiService.get(
-        `/tarefa/projeto/${location.state.id}/tarefas`
+        `/tarefa/projeto/${idprojeto}/tarefas`
       );
       const json = response.data;
 
@@ -173,10 +174,12 @@ export default function MenuProjeto() {
 
   function handleProjetoSelectChange(projeto) {
     setProjetoSelecionado(projeto)
+    BuscarTarefas()
+    idProjeto = projetoSelecionado.value
+    console.log(idProjeto)
   }
 
   var idProjeto = projetoSelecionado.value
-  console.log(idProjeto)
 
   return (
     <div className={styles.container}>
